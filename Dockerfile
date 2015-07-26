@@ -1,4 +1,5 @@
-##################################################################
+#
+#################################################################
 # Dockerfile to build Mixpanel event extraction container images
 # Based on ruby:2.2.0
 ##################################################################
@@ -27,7 +28,7 @@ RUN git clone git@github.com:methodmill/DataRobot.git
 RUN cd DataRobot/Mixpanel && bundle install
 
 # Delete the private key and thank you for your sevice
-RUN rm /root/.ssh/id_rsa
+# RUN rm /root/.ssh/id_rsa
 
 # You can setup environment variables for launching containers to the rake task
 # ENV AWS_ACCESS_KEY_ID <FILL-IN>
