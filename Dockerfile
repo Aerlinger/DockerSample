@@ -22,10 +22,10 @@ MAINTAINER Kada Situ <kada@methodmill.com>
 # Set working directory
 WORKDIR /root
 
-RUN git clone https://79c556d4e1871fad7648c7a0ca789be679e8a6b2@github.com/methodmill/DataRobot
+RUN git clone https://79c556d4e1871fad7648c7a0ca789be679e8a6b2@github.com/methodmill/MixpanelImporter
 
 # Install gems
-RUN cd DataRobot/Mixpanel && bundle install
+RUN cd MixpanelImporter && bundle install
 
 
 
@@ -39,4 +39,7 @@ RUN cd DataRobot/Mixpanel && bundle install
 # ENV SLACK_CHANNEL_ID C07AQV3MX
 # ENV SLACK_USER kada
 # ENV SLACK_RECIPIENT_NAME kada
+#
+#ENTRYPOINT [""]
+
 
