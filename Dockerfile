@@ -10,22 +10,24 @@ FROM ruby:2.2.0
 MAINTAINER Kada Situ <kada@methodmill.com>
 
 # Update the repository sources list
-RUN apt-get update
+# RUN apt-get update
 
 # Install and setup SSH key for Github clone
-RUN mkdir -p /root/.ssh
-RUN chmod 700 /root/.ssh
-ADD ./id_rsa /root/.ssh/id_rsa
-RUN chmod 600 /root/.ssh/id_rsa
-RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
+#RUN mkdir -p /root/.ssh
+#RUN chmod 700 /root/.ssh
+#ADD ./id_rsa /root/.ssh/id_rsa
+#RUN chmod 600 /root/.ssh/id_rsa
+#RUN ssh-keyscan github.com >> /root/.ssh/known_hosts
 
 # Set working directory
 WORKDIR /root
 
-RUN git clone git@github.com:methodmill/DataRobot.git
+RUN git clone https://79c556d4e1871fad7648c7a0ca789be679e8a6b2@github.com/methodmill/DataRobot
 
 # Install gems
 RUN cd DataRobot/Mixpanel && bundle install
+
+
 
 # Delete the private key and thank you for your sevice
 # RUN rm /root/.ssh/id_rsa
