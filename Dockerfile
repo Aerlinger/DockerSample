@@ -25,7 +25,7 @@ WORKDIR /root
 RUN git clone https://79c556d4e1871fad7648c7a0ca789be679e8a6b2@github.com/methodmill/MixpanelImporter
 
 # Install gems
-RUN cd MixpanelImporter && bundle install
+RUN cd MixpanelImporter && bundle update && bundle install
 
 
 
